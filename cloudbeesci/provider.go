@@ -1,4 +1,4 @@
-package jenkins
+package cloudbeesci
 
 import (
 	"context"
@@ -38,20 +38,20 @@ func Provider() *schema.Provider {
 			},
 		},
 
-		DataSourcesMap: map[string]*schema.Resource{
-			"jenkins_credential_username":      dataSourceJenkinsCredentialUsername(),
-			"jenkins_credential_vault_approle": dataSourceJenkinsCredentialVaultAppRole(),
-			"jenkins_folder":                   dataSourceJenkinsFolder(),
-			"jenkins_job":                      dataSourceJenkinsJob(),
-		},
-		
-		ResourcesMap: map[string]*schema.Resource{
-			"jenkins_credential_secret_text":   resourceJenkinsCredentialSecretText(),
-			"jenkins_credential_username":      resourceJenkinsCredentialUsername(),
-			"jenkins_credential_vault_approle": resourceJenkinsCredentialVaultAppRole(),
-			"jenkins_folder":                   resourceJenkinsFolder(),
-			"jenkins_job":                      resourceJenkinsJob(),
-		},
+		// DataSourcesMap: map[string]*schema.Resource{
+		// 	"jenkins_credential_username":      dataSourceJenkinsCredentialUsername(),
+		// 	"jenkins_credential_vault_approle": dataSourceJenkinsCredentialVaultAppRole(),
+		// 	"jenkins_folder":                   dataSourceJenkinsFolder(),
+		// 	"jenkins_job":                      dataSourceJenkinsJob(),
+		// },
+		//
+		// ResourcesMap: map[string]*schema.Resource{
+		// 	"jenkins_credential_secret_text":   resourceJenkinsCredentialSecretText(),
+		// 	"jenkins_credential_username":      resourceJenkinsCredentialUsername(),
+		// 	"jenkins_credential_vault_approle": resourceJenkinsCredentialVaultAppRole(),
+		// 	"jenkins_folder":                   resourceJenkinsFolder(),
+		// 	"jenkins_job":                      resourceJenkinsJob(),
+		// },
 
 		ConfigureContextFunc: configureProvider,
 	}
